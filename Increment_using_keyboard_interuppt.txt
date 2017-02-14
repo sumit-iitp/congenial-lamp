@@ -1,0 +1,23 @@
+import time
+import signal
+import sys
+
+#Press ctrl + c to increment value
+
+a = 0
+def signal_handler(signal, frame):
+
+    global a
+    a = a+1
+    
+
+while True:
+    signal.signal(signal.SIGINT, signal_handler)
+    
+    print a
+    time.sleep(0.1)
+
+
+
+    
+    
